@@ -50,6 +50,8 @@ import { CorrelationIdMiddleware } from './common/middleware/correlation-id.midd
 import { DatabaseOptimizationModule } from './database-optimization/database-optimization.module';
 import { NotificationsModule } from './notifications/notifications.module';
 import { I18nApiModule } from './i18n/i18n.module';
+import { ElectiveModule } from './elective/elective.module';
+import { ElectiveCoursesModule } from './elective-courses/elective-courses.module';
 
 const ENV = process.env.NODE_ENV;
 console.log('NODE_ENV:', process.env.NODE_ENV);
@@ -139,6 +141,8 @@ const databaseImports = isOpenApiEnv
     ErrorDashboardModule,
     DatabaseOptimizationModule.forRoot(),
     NotificationsModule,
+    ElectiveModule,
+    ElectiveCoursesModule,
   ],
   controllers: [AppController],
   providers: [
